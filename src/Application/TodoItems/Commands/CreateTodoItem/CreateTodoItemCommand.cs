@@ -1,11 +1,11 @@
-﻿using RecruitmentTask.Application.Common.Interfaces;
-using RecruitmentTask.Domain.Entities;
-using RecruitmentTask.Domain.Events;
+﻿using ATSS.Application.Common.Interfaces;
+using ATSS.Domain.Entities;
+using ATSS.Domain.Events;
 using MediatR;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace RecruitmentTask.Application.TodoItems.Commands.CreateTodoItem
+namespace ATSS.Application.TodoItems.Commands.CreateTodoItem
 {
     public class CreateTodoItemCommand : IRequest<int>
     {

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace RecruitmentTask.Application.WeatherForecasts.Queries.GetWeatherForecasts
+namespace ATSS.Application.WeatherForecasts.Queries.GetWeatherForecasts
 {
     public class WeatherForecast
     {

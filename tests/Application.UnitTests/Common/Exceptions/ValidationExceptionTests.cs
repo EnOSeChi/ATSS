@@ -1,11 +1,11 @@
-﻿using RecruitmentTask.Application.Common.Exceptions;
+﻿using ATSS.Application.Common.Exceptions;
 using FluentAssertions;
 using FluentValidation.Results;
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;
 
-namespace RecruitmentTask.Application.UnitTests.Common.Exceptions
+namespace ATSS.Application.UnitTests.Common.Exceptions
 {
     public class ValidationExceptionTests
     {

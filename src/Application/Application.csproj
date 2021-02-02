@@ -2,8 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
-    <RootNamespace>RecruitmentTask.Application</RootNamespace>
-    <AssemblyName>RecruitmentTask.Application</AssemblyName>
+    <RootNamespace>ATSS.Application</RootNamespace>
+    <AssemblyName>ATSS.Application</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>

@@ -1,11 +1,11 @@
-﻿using RecruitmentTask.Application.Common.Interfaces;
+﻿using ATSS.Application.Common.Interfaces;
 using FluentValidation;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace RecruitmentTask.Application.TodoLists.Commands.UpdateTodoList
+namespace ATSS.Application.TodoLists.Commands.UpdateTodoList
 {
     public class UpdateTodoListCommandValidator : AbstractValidator<UpdateTodoListCommand>
     {

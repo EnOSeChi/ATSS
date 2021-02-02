@@ -1,11 +1,11 @@
 ﻿using AutoMapper;
-using RecruitmentTask.Application.Common.Behaviours;
+using ATSS.Application.Common.Behaviours;
 using FluentValidation;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
 
-namespace RecruitmentTask.Application
+namespace ATSS.Application
 {
     public static class DependencyInjection
     {

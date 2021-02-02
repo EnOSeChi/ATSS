@@ -1,7 +1,7 @@
-﻿using RecruitmentTask.Domain.Common;
-using RecruitmentTask.Domain.Entities;
+﻿using ATSS.Domain.Common;
+using ATSS.Domain.Entities;
 
-namespace RecruitmentTask.Domain.Events
+namespace ATSS.Domain.Events
 {
     public class TodoItemCompletedEvent : DomainEvent
     {

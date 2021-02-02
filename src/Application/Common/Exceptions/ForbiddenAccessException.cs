@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace RecruitmentTask.Application.Common.Exceptions
+namespace ATSS.Application.Common.Exceptions
 {
     public class ForbiddenAccessException : Exception
     {

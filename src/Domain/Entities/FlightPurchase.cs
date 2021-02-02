@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RecruitmentTask.Domain.Entities
+namespace ATSS.Domain.Entities
 {
     public class FlightPurchase
     {

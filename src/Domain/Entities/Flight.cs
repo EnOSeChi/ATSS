@@ -1,11 +1,11 @@
-﻿using RecruitmentTask.Domain.ValueObjects;
+﻿using ATSS.Domain.ValueObjects;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RecruitmentTask.Domain.Entities
+namespace ATSS.Domain.Entities
 {
     public class Flight
     {

@@ -1,6 +1,6 @@
-﻿using RecruitmentTask.Application.Common.Exceptions;
-using RecruitmentTask.Application.Common.Interfaces;
-using RecruitmentTask.Application.Common.Security;
+﻿using ATSS.Application.Common.Exceptions;
+using ATSS.Application.Common.Interfaces;
+using ATSS.Application.Common.Security;
 using MediatR;
 using System;
 using System.Linq;
@@ -8,7 +8,7 @@ using System.Reflection;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace RecruitmentTask.Application.Common.Behaviours
+namespace ATSS.Application.Common.Behaviours
 {
     public class AuthorizationBehaviour<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse>
     {

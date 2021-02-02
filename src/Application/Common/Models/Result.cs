@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace RecruitmentTask.Application.Common.Models
+namespace ATSS.Application.Common.Models
 {
     public class Result
     {

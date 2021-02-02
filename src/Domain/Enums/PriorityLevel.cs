@@ -1,4 +1,4 @@
-﻿namespace RecruitmentTask.Domain.Enums
+﻿namespace ATSS.Domain.Enums
 {
     public enum PriorityLevel
     {

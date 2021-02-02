@@ -5,7 +5,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace RecruitmentTask.Application.WeatherForecasts.Queries.GetWeatherForecasts
+namespace ATSS.Application.WeatherForecasts.Queries.GetWeatherForecasts
 {
     public class GetWeatherForecastsQuery : IRequest<IEnumerable<WeatherForecast>>
     {

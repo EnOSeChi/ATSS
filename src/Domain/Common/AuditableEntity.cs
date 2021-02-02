@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace RecruitmentTask.Domain.Common
+namespace ATSS.Domain.Common
 {
     public abstract class AuditableEntity
     {

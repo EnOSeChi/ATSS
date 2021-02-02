@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace RecruitmentTask.Domain.Common
+namespace ATSS.Domain.Common
 {
     public interface IHasDomainEvent
     {

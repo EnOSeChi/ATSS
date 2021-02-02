@@ -1,10 +1,10 @@
-﻿using RecruitmentTask.Application.Common.Interfaces;
+﻿using ATSS.Application.Common.Interfaces;
 using MediatR.Pipeline;
 using Microsoft.Extensions.Logging;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace RecruitmentTask.Application.Common.Behaviours
+namespace ATSS.Application.Common.Behaviours
 {
     public class LoggingBehaviour<TRequest> : IRequestPreProcessor<TRequest>
     {

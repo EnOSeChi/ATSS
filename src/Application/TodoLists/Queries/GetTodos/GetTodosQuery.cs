@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
 using AutoMapper.QueryableExtensions;
-using RecruitmentTask.Application.Common.Interfaces;
-using RecruitmentTask.Application.Common.Security;
-using RecruitmentTask.Domain.Enums;
+using ATSS.Application.Common.Interfaces;
+using ATSS.Application.Common.Security;
+using ATSS.Domain.Enums;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -10,7 +10,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace RecruitmentTask.Application.TodoLists.Queries.GetTodos
+namespace ATSS.Application.TodoLists.Queries.GetTodos
 {
     public class GetTodosQuery : IRequest<TodosVm>
     {

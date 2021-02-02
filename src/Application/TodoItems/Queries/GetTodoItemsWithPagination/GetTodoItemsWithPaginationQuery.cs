@@ -1,15 +1,15 @@
 ﻿using AutoMapper;
 using AutoMapper.QueryableExtensions;
-using RecruitmentTask.Application.Common.Interfaces;
-using RecruitmentTask.Application.Common.Mappings;
-using RecruitmentTask.Application.Common.Models;
-using RecruitmentTask.Application.TodoLists.Queries.GetTodos;
+using ATSS.Application.Common.Interfaces;
+using ATSS.Application.Common.Mappings;
+using ATSS.Application.Common.Models;
+using ATSS.Application.TodoLists.Queries.GetTodos;
 using MediatR;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace RecruitmentTask.Application.TodoItems.Queries.GetTodoItemsWithPagination
+namespace ATSS.Application.TodoItems.Queries.GetTodoItemsWithPagination
 {
     public class GetTodoItemsWithPaginationQuery : IRequest<PaginatedList<TodoItemDto>>
     {

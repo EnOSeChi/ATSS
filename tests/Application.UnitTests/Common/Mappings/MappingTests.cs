@@ -1,12 +1,12 @@
 ﻿using AutoMapper;
-using RecruitmentTask.Application.Common.Mappings;
-using RecruitmentTask.Application.TodoLists.Queries.GetTodos;
-using RecruitmentTask.Domain.Entities;
+using ATSS.Application.Common.Mappings;
+using ATSS.Application.TodoLists.Queries.GetTodos;
+using ATSS.Domain.Entities;
 using NUnit.Framework;
 using System;
 using System.Runtime.Serialization;
 
-namespace RecruitmentTask.Application.UnitTests.Common.Mappings
+namespace ATSS.Application.UnitTests.Common.Mappings
 {
     public class MappingTests
     {

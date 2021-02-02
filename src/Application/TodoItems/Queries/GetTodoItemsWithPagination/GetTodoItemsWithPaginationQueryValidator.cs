@@ -1,6 +1,6 @@
 ﻿using FluentValidation;
 
-namespace RecruitmentTask.Application.TodoItems.Queries.GetTodoItemsWithPagination
+namespace ATSS.Application.TodoItems.Queries.GetTodoItemsWithPagination
 {
     public class GetTodoItemsWithPaginationQueryValidator : AbstractValidator<GetTodoItemsWithPaginationQuery>
     {

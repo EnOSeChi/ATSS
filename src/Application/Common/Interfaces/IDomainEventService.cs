@@ -1,7 +1,7 @@
-﻿using RecruitmentTask.Domain.Common;
+﻿using ATSS.Domain.Common;
 using System.Threading.Tasks;
 
-namespace RecruitmentTask.Application.Common.Interfaces
+namespace ATSS.Application.Common.Interfaces
 {
     public interface IDomainEventService
     {

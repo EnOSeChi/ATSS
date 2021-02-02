@@ -3,7 +3,7 @@ using System;
 using System.Linq;
 using System.Reflection;
 
-namespace RecruitmentTask.Application.Common.Mappings
+namespace ATSS.Application.Common.Mappings
 {
     public class MappingProfile : Profile
     {

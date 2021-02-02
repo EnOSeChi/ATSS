@@ -1,14 +1,14 @@
 ﻿using FluentAssertions;
 using NUnit.Framework;
-using RecruitmentTask.Domain.Exceptions;
-using RecruitmentTask.Domain.ValueObjects;
+using ATSS.Domain.Exceptions;
+using ATSS.Domain.ValueObjects;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RecruitmentTask.Domain.UnitTests.ValueObjects
+namespace ATSS.Domain.UnitTests.ValueObjects
 {
     public class FlightIdTests
     {

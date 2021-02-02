@@ -1,7 +1,7 @@
-﻿using RecruitmentTask.Application.Common.Mappings;
-using RecruitmentTask.Domain.Entities;
+﻿using ATSS.Application.Common.Mappings;
+using ATSS.Domain.Entities;
 
-namespace RecruitmentTask.Application.TodoLists.Queries.ExportTodos
+namespace ATSS.Application.TodoLists.Queries.ExportTodos
 {
     public class TodoItemRecord : IMapFrom<TodoItem>
     {

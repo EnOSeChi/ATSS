@@ -1,9 +1,9 @@
-﻿using RecruitmentTask.Domain.Exceptions;
-using RecruitmentTask.Domain.ValueObjects;
+﻿using ATSS.Domain.Exceptions;
+using ATSS.Domain.ValueObjects;
 using FluentAssertions;
 using NUnit.Framework;
 
-namespace RecruitmentTask.Domain.UnitTests.ValueObjects
+namespace ATSS.Domain.UnitTests.ValueObjects
 {
     public class ColourTests
     {

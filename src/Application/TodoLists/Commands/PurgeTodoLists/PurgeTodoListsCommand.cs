@@ -1,10 +1,10 @@
-﻿using RecruitmentTask.Application.Common.Interfaces;
-using RecruitmentTask.Application.Common.Security;
+﻿using ATSS.Application.Common.Interfaces;
+using ATSS.Application.Common.Security;
 using MediatR;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace RecruitmentTask.Application.TodoLists.Commands.PurgeTodoLists
+namespace ATSS.Application.TodoLists.Commands.PurgeTodoLists
 {
     [Authorize(Roles = "Administrator")]
     [Authorize(Policy = "CanPurge")]

@@ -1,4 +1,4 @@
-﻿namespace RecruitmentTask.Application.TodoLists.Queries.GetTodos
+﻿namespace ATSS.Application.TodoLists.Queries.GetTodos
 {
     public class PriorityLevelDto
     {

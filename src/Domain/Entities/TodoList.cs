@@ -1,8 +1,8 @@
-﻿using RecruitmentTask.Domain.Common;
-using RecruitmentTask.Domain.ValueObjects;
+﻿using ATSS.Domain.Common;
+using ATSS.Domain.ValueObjects;
 using System.Collections.Generic;
 
-namespace RecruitmentTask.Domain.Entities
+namespace ATSS.Domain.Entities
 {
     public class TodoList : AuditableEntity
     {

@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
-using RecruitmentTask.Application.Common.Mappings;
-using RecruitmentTask.Domain.Entities;
+using ATSS.Application.Common.Mappings;
+using ATSS.Domain.Entities;
 
-namespace RecruitmentTask.Application.TodoLists.Queries.GetTodos
+namespace ATSS.Application.TodoLists.Queries.GetTodos
 {
     public class TodoItemDto : IMapFrom<TodoItem>
     {

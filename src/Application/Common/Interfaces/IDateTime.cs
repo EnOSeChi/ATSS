@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace RecruitmentTask.Application.Common.Interfaces
+namespace ATSS.Application.Common.Interfaces
 {
     public interface IDateTime
     {

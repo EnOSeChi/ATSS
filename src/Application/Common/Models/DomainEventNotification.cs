@@ -1,7 +1,7 @@
-﻿using RecruitmentTask.Domain.Common;
+﻿using ATSS.Domain.Common;
 using MediatR;
 
-namespace RecruitmentTask.Application.Common.Models
+namespace ATSS.Application.Common.Models
 {
     public class DomainEventNotification<TDomainEvent> : INotification where TDomainEvent : DomainEvent
     {

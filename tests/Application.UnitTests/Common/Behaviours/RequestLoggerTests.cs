@@ -1,13 +1,13 @@
-﻿using RecruitmentTask.Application.Common.Behaviours;
-using RecruitmentTask.Application.Common.Interfaces;
-using RecruitmentTask.Application.TodoItems.Commands.CreateTodoItem;
+﻿using ATSS.Application.Common.Behaviours;
+using ATSS.Application.Common.Interfaces;
+using ATSS.Application.TodoItems.Commands.CreateTodoItem;
 using Microsoft.Extensions.Logging;
 using Moq;
 using NUnit.Framework;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace RecruitmentTask.Application.UnitTests.Common.Behaviours
+namespace ATSS.Application.UnitTests.Common.Behaviours
 {
     public class RequestLoggerTests
     {

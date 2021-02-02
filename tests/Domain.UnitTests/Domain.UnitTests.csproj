@@ -2,8 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
-    <RootNamespace>RecruitmentTask.Domain.UnitTests</RootNamespace>
-    <AssemblyName>RecruitmentTask.Domain.UnitTests</AssemblyName>
+    <RootNamespace>ATSS.Domain.UnitTests</RootNamespace>
+    <AssemblyName>ATSS.Domain.UnitTests</AssemblyName>
 
     <IsPackable>false</IsPackable>
   </PropertyGroup>

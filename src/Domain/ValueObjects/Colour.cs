@@ -1,9 +1,9 @@
-﻿using RecruitmentTask.Domain.Common;
-using RecruitmentTask.Domain.Exceptions;
+﻿using ATSS.Domain.Common;
+using ATSS.Domain.Exceptions;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace RecruitmentTask.Domain.ValueObjects
+namespace ATSS.Domain.ValueObjects
 {
     public class Colour : ValueObject
     {

@@ -1,6 +1,6 @@
 ﻿using FluentValidation;
 
-namespace RecruitmentTask.Application.TodoItems.Commands.UpdateTodoItem
+namespace ATSS.Application.TodoItems.Commands.UpdateTodoItem
 {
     public class UpdateTodoItemCommandValidator : AbstractValidator<UpdateTodoItemCommand>
     {

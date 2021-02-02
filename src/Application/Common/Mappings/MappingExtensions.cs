@@ -1,12 +1,12 @@
 ﻿using AutoMapper;
 using AutoMapper.QueryableExtensions;
-using RecruitmentTask.Application.Common.Models;
+using ATSS.Application.Common.Models;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace RecruitmentTask.Application.Common.Mappings
+namespace ATSS.Application.Common.Mappings
 {
     public static class MappingExtensions
     {

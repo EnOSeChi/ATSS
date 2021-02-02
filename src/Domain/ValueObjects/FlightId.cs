@@ -1,5 +1,5 @@
-﻿using RecruitmentTask.Domain.Common;
-using RecruitmentTask.Domain.Exceptions;
+﻿using ATSS.Domain.Common;
+using ATSS.Domain.Exceptions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +7,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
-namespace RecruitmentTask.Domain.ValueObjects
+namespace ATSS.Domain.ValueObjects
 {
     public class FlightId : ValueObject
     {

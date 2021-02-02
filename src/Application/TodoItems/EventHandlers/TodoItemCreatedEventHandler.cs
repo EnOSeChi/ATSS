@@ -1,11 +1,11 @@
-﻿using RecruitmentTask.Application.Common.Models;
-using RecruitmentTask.Domain.Events;
+﻿using ATSS.Application.Common.Models;
+using ATSS.Domain.Events;
 using MediatR;
 using Microsoft.Extensions.Logging;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace RecruitmentTask.Application.TodoItems.EventHandlers
+namespace ATSS.Application.TodoItems.EventHandlers
 {
     public class TodoItemCreatedEventHandler : INotificationHandler<DomainEventNotification<TodoItemCreatedEvent>>
     {

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RecruitmentTask.Domain.Exceptions
+namespace ATSS.Domain.Exceptions
 {
     public class UnsupportedFlightIdException : Exception
     {

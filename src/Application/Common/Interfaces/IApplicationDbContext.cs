@@ -1,9 +1,9 @@
-﻿using RecruitmentTask.Domain.Entities;
+﻿using ATSS.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace RecruitmentTask.Application.Common.Interfaces
+namespace ATSS.Application.Common.Interfaces
 {
     public interface IApplicationDbContext
     {

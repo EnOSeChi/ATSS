@@ -2,8 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
-    <RootNamespace>RecruitmentTask.Domain</RootNamespace>
-    <AssemblyName>RecruitmentTask.Domain</AssemblyName>
+    <RootNamespace>ATSS.Domain</RootNamespace>
+    <AssemblyName>ATSS.Domain</AssemblyName>
   </PropertyGroup>
 
 </Project>

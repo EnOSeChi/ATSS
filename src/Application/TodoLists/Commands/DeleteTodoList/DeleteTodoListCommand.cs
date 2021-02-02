@@ -1,13 +1,13 @@
-﻿using RecruitmentTask.Application.Common.Exceptions;
-using RecruitmentTask.Application.Common.Interfaces;
-using RecruitmentTask.Domain.Entities;
+﻿using ATSS.Application.Common.Exceptions;
+using ATSS.Application.Common.Interfaces;
+using ATSS.Domain.Entities;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace RecruitmentTask.Application.TodoLists.Commands.DeleteTodoList
+namespace ATSS.Application.TodoLists.Commands.DeleteTodoList
 {
     public class DeleteTodoListCommand : IRequest
     {

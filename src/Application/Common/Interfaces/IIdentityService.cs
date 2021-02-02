@@ -1,7 +1,7 @@
-﻿using RecruitmentTask.Application.Common.Models;
+﻿using ATSS.Application.Common.Models;
 using System.Threading.Tasks;
 
-namespace RecruitmentTask.Application.Common.Interfaces
+namespace ATSS.Application.Common.Interfaces
 {
     public interface IIdentityService
     {

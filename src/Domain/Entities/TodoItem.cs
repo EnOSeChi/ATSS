@@ -1,10 +1,10 @@
-﻿using RecruitmentTask.Domain.Common;
-using RecruitmentTask.Domain.Enums;
-using RecruitmentTask.Domain.Events;
+﻿using ATSS.Domain.Common;
+using ATSS.Domain.Enums;
+using ATSS.Domain.Events;
 using System;
 using System.Collections.Generic;
 
-namespace RecruitmentTask.Domain.Entities
+namespace ATSS.Domain.Entities
 {
     public class TodoItem : AuditableEntity, IHasDomainEvent
     {

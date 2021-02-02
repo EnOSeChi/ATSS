@@ -1,10 +1,10 @@
-﻿using RecruitmentTask.Application.Common.Interfaces;
-using RecruitmentTask.Domain.Entities;
+﻿using ATSS.Application.Common.Interfaces;
+using ATSS.Domain.Entities;
 using MediatR;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace RecruitmentTask.Application.TodoLists.Commands.CreateTodoList
+namespace ATSS.Application.TodoLists.Commands.CreateTodoList
 {
     public class CreateTodoListCommand : IRequest<int>
     {

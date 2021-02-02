@@ -1,10 +1,10 @@
-﻿using RecruitmentTask.Application.Common.Interfaces;
+﻿using ATSS.Application.Common.Interfaces;
 using FluentValidation;
 using Microsoft.EntityFrameworkCore;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace RecruitmentTask.Application.TodoLists.Commands.CreateTodoList
+namespace ATSS.Application.TodoLists.Commands.CreateTodoList
 {
     public class CreateTodoListCommandValidator : AbstractValidator<CreateTodoListCommand>
     {

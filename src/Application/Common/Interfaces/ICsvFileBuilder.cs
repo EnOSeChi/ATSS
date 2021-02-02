@@ -1,7 +1,7 @@
-﻿using RecruitmentTask.Application.TodoLists.Queries.ExportTodos;
+﻿using ATSS.Application.TodoLists.Queries.ExportTodos;
 using System.Collections.Generic;
 
-namespace RecruitmentTask.Application.Common.Interfaces
+namespace ATSS.Application.Common.Interfaces
 {
     public interface ICsvFileBuilder
     {

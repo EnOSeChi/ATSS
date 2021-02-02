@@ -1,4 +1,4 @@
-﻿namespace RecruitmentTask.Application.TodoLists.Queries.ExportTodos
+﻿namespace ATSS.Application.TodoLists.Queries.ExportTodos
 {
     public class ExportTodosVm
     {

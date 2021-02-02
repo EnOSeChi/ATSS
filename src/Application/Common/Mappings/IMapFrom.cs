@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 
-namespace RecruitmentTask.Application.Common.Mappings
+namespace ATSS.Application.Common.Mappings
 {
     public interface IMapFrom<T>
     {   

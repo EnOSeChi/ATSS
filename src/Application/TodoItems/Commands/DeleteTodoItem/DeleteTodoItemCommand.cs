@@ -1,11 +1,11 @@
-﻿using RecruitmentTask.Application.Common.Exceptions;
-using RecruitmentTask.Application.Common.Interfaces;
-using RecruitmentTask.Domain.Entities;
+﻿using ATSS.Application.Common.Exceptions;
+using ATSS.Application.Common.Interfaces;
+using ATSS.Domain.Entities;
 using MediatR;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace RecruitmentTask.Application.TodoItems.Commands.DeleteTodoItem
+namespace ATSS.Application.TodoItems.Commands.DeleteTodoItem
 {
     public class DeleteTodoItemCommand : IRequest
     {

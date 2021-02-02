@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace RecruitmentTask.Domain.Exceptions
+namespace ATSS.Domain.Exceptions
 {
     public class UnsupportedColourException : Exception
     {
