@@ -9,6 +9,11 @@ using System.Threading.Tasks;
 
 namespace ATSS.Domain.ValueObjects
 {
+    /// <summary>
+    /// Flight Id – oznacza unikalne ID lotu. Składa się z trzech liter (oznaczający kod IATA linii lotniczej
+    /// fizycznie wykonującej lot), 5-ciu cyfr i trzech liter na końcu.
+    /// Przykład: KLM 12345 BCA
+    /// </summary>
     public class FlightId : ValueObject
     {
         static FlightId()

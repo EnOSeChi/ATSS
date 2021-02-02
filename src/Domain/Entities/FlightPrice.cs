@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace ATSS.Domain.Entities
 {
+    /// <summary>
+    /// Flight price – cena lotu, która może być różna dla różnych dat i godzin
+    /// </summary>
     public class FlightPrice
     {
         public int Id { get; set; }
