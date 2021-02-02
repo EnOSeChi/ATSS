@@ -11,13 +11,14 @@ namespace ATSS.Domain.Entities
     {
         public Flight()
         {
-            FlightSchedules = new List<FlightSchedule>();
+            CustomPrices = new List<FlightPrice>();
         }
 
         public FlightId Id { get; private set; }
         public string From { get; set; }
         public string To { get; set; }
-        public IList<FlightSchedule> FlightSchedules { get; private set; }
+        public double DefaultPrice { get; set; }
+        public IList<FlightPrice> CustomPrices { get; set; }
         public Tenant CreatedBy { get; set; }
     }
 }

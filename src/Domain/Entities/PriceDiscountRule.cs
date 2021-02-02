@@ -6,9 +6,11 @@ using System.Threading.Tasks;
 
 namespace ATSS.Domain.Entities
 {
-    public class PriceDiscount
+    public class PriceDiscountRule
     {
         public int Id { get; set; }
-        public IList<PriceDiscountRule> Rules { get; set; }
+        public string FieldName { get; set; }
+        public string Value { get; set; }
+        public PriceDiscount PriceDiscount { get; set; }
     }
 }
