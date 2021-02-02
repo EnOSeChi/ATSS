@@ -11,6 +11,18 @@ namespace ATSS.Application.Common.Interfaces
 
         DbSet<TodoItem> TodoItems { get; set; }
 
+        DbSet<Flight> Flights { get; set; }
+
+        DbSet<Tenant> Tenants { get; set; }
+
+        DbSet<FlightPrice> FlightPrices { get; set; }
+
+        DbSet<FlightPurchase> FlightPurchases { get; set; }
+
+        DbSet<PriceDiscount> PriceDiscounts { get; set; }
+
+        DbSet<PriceDiscountRule> PriceDiscountRules { get; set; }
+
         Task<int> SaveChangesAsync(CancellationToken cancellationToken);
     }
 }

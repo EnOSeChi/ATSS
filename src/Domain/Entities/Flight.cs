@@ -17,7 +17,8 @@ namespace ATSS.Domain.Entities
             CustomPrices = new List<FlightPrice>();
         }
 
-        public FlightId Id { get; private set; }
+        public int Id { get; set; }
+        public FlightId FlightId { get; set; }
         public string From { get; set; }
         public string To { get; set; }
         public double DefaultPrice { get; set; }    
