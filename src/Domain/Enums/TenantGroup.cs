@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ATSS.Domain.Entities
+namespace ATSS.Domain.Enums
 {
     public enum TenantGroup
     {
