@@ -39,6 +39,7 @@ namespace ATSS.Application.UnitTests
         private DbConnection CreateInMemoryDatabase()
         {
             var connection = new SqliteConnection("Filename=:memory:");
+            //var connection = new SqliteConnection("Filename=test.db");
 
             connection.Open();
 

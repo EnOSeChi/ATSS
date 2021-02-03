@@ -11,6 +11,9 @@ using System.Threading.Tasks;
 
 namespace ATSS.Application.Flights.Commands.CreateFlight
 {
+    /// <summary>
+    /// Możliwość ręcznego dodania lotu
+    /// </summary>
     public class CreateFlightCommand: IRequest<int>
     {
         public FlightId FlightId { get; set; }

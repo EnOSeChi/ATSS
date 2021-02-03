@@ -24,7 +24,14 @@ namespace ATSS.Domain.ValueObjects
         {
         }
 
-        private FlightId(string id)
+        private FlightId(string segment1, string segment2, string segment3)
+        {
+            Segment1 = segment1;
+            Segment2 = segment2;
+            Segment3 = segment3;
+        }
+
+        public static FlightId From(string id)
         {
             var match = Regex.Match(id, @"^[a-zA-Z]{3}\s[0-9]{5}\s[a-zA-Z]{3}$");
 
@@ -33,14 +40,7 @@ namespace ATSS.Domain.ValueObjects
                 throw new UnsupportedFlightIdException(id);
             }
 
-            Segment1 = id.Substring(0, 3);
-            Segment2 = id.Substring(4, 5);
-            Segment3 = id.Substring(10, 3);
-        }
-
-        public static FlightId From(string id)
-        {
-            var flightId = new FlightId(id);
+            var flightId = new FlightId(id.Substring(0, 3), id.Substring(4, 5), id.Substring(10, 3));
             return flightId;
         }
 
@@ -65,7 +65,9 @@ namespace ATSS.Domain.ValueObjects
 
         protected override IEnumerable<object> GetEqualityComponents()
         {
-            return new[] { Segment1, Segment2, Segment3 };
+            yield return Segment1;
+            yield return Segment2;
+            yield return Segment3;
         }
     }
 }
