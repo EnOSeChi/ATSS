@@ -31,7 +31,7 @@ namespace ATSS.Application.UnitTests
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlite(connection: CreateInMemoryDatabase());
+                optionsBuilder.UseInMemoryDatabase("test");//.UseSqlite(connection: CreateInMemoryDatabase());
             }
             base.OnConfiguring(optionsBuilder);
         }

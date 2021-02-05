@@ -22,6 +22,8 @@ namespace ATSS.Domain.Entities
 
         public int Id { get; set; }
         public string Name { get; set; }
+        public DateTimeOffset Birthday { get; set; }
+
         public TenantGroup TenantGroup { get; set; }
         public IList<Flight> CreatedFlights { get; private set; }
         public IList<FlightPurchase> PurchasedFlights { get; private set; }

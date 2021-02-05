@@ -16,7 +16,7 @@ namespace ATSS.Domain.Entities
         public int Id { get; set; }
         public Tenant Tenant { get; set; }
         public Flight Flight { get; set; }
-        public DateTimeOffset Departure { get; set; }
+        public DateTimeOffset DepartureDateTime { get; set; }
         public double Price { get; set; }
         public IList<PriceDiscount> Discounts { get; private set; }
     }
