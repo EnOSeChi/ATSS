@@ -1,4 +1,5 @@
 ﻿using ATSS.Application.Common.Mappings;
+using ATSS.Application.FlightPurchases.Commands;
 using ATSS.Application.Flights.Commands.CreateFlight;
 using ATSS.Application.Flights.Queries.GetAvailableFlights;
 using ATSS.Domain.Entities;
@@ -8,6 +9,8 @@ using NUnit.Framework;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Dynamic.Core;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -54,6 +57,28 @@ namespace ATSS.Application.UnitTests.Flights.Queries.GetAvailableFlights
             Context.SaveChanges();
 
             var from = DateTimeOffset.Parse("2021-02-02T10:00:00Z");
+
+            // predicate test
+            //var purchases = new List<FlightPurchaseDto>();
+            //purchases.Add(new FlightPurchaseDto
+            //{
+            //    IsOnTenantBirthday = true,
+            //    From = "Europe"
+            //});
+            //purchases.Add(new FlightPurchaseDto());
+            ////var query = Context.Flights.Where("(From = \"Europe\")").ToList();
+            //var query = purchases.AsQueryable().Where("(IsOnTenantBirthday = \"True\")");
+            //query = query.Where("(From = \"Europe\")");
+            //var match = query.ToList();
+
+            //var t = new FlightPurchaseDto
+            //{
+            //    IsOnTenantBirthday = true
+            //};
+
+           // var fields = t.GetType().GetFields();
+           // var bField = t.GetType().GetProperty("IsOnTenantBirthday");
+           // var bValue = bField.GetValue(t);
 
             var availableFlightsQuery = new GetAvailableFlightQueryHandler(Context, _mapper);
             var result = await availableFlightsQuery.Handle(new GetAvailableFlightQuery

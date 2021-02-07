@@ -15,12 +15,12 @@ using System.Threading.Tasks;
 
 namespace ATSS.Application.UnitTests.FlightPurchases.Commands
 {
-    public class CreateFlightPurchaseCommandTest : Testing
+    public class CreateFlightPurchaseCommandTests : Testing
     {
         private MapperConfiguration _configuration;
         private IMapper _mapper;
 
-        public CreateFlightPurchaseCommandTest()
+        public CreateFlightPurchaseCommandTests()
         {
             _configuration = new MapperConfiguration(cfg =>
             {
