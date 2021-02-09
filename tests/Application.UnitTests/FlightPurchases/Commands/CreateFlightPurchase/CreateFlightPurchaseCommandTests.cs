@@ -1,19 +1,16 @@
 ﻿using ATSS.Application.Common.Mappings;
-using ATSS.Application.FlightPurchases.Commands;
-using ATSS.Application.Flights.Commands.CreateFlight;
+using ATSS.Application.FlightPurchases.Commands.CreateFlightPurchase;
 using ATSS.Application.Flights.Queries.GetAvailableFlights;
 using ATSS.Domain.Entities;
 using ATSS.Domain.ValueObjects;
 using AutoMapper;
 using NUnit.Framework;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace ATSS.Application.UnitTests.FlightPurchases.Commands
+namespace ATSS.Application.UnitTests.FlightPurchases.Commands.CreateFlightPurchase
 {
     public class CreateFlightPurchaseCommandTests : Testing
     {

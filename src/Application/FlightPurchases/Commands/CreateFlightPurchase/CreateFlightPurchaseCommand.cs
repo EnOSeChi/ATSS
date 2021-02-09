@@ -11,7 +11,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace ATSS.Application.FlightPurchases.Commands
+namespace ATSS.Application.FlightPurchases.Commands.CreateFlightPurchase
 {
     public class CreateFlightPurchaseCommand : IRequest<FlightPurchaseDto>
     {

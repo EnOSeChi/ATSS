@@ -1,0 +1,95 @@
+﻿using ATSS.Application.Common.Interfaces;
+using ATSS.Application.FlightPurchases.Commands.CreateFlightPurchase;
+using MediatR;
+using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
+using System.Linq;
+using System.Linq.Dynamic.Core;
+using System.Threading;
+using System.Threading.Tasks;
+
+namespace ATSS.Application.PriceDiscounts.Commands.ApplyPriceDiscount
+{
+    public class ApplyPriceDiscountCommand : IRequest<double>
+    {
+        public FlightPurchaseDto FlightPurchase { get; set; }
+    }
+
+    public class ApplyPriceDiscountCommandHandler : IRequestHandler<ApplyPriceDiscountCommand, double>
+    {
+        private readonly IApplicationDbContext _context;
+
+        public ApplyPriceDiscountCommandHandler(IApplicationDbContext context)
+        {
+            _context = context;
+        }
+
+        public async Task<double> Handle(ApplyPriceDiscountCommand request, CancellationToken cancellationToken)
+        {
+            var discounts = _context.PriceDiscounts
+                .Include(x => x.Rules)
+                .ToList();
+
+            var purchase = _context.FlightPurchases
+                .Find(request.FlightPurchase.Id);
+
+            foreach (var discount in discounts)
+            {
+                // minimalna cena 20
+                if (purchase.Price - 5 < 20)
+                {
+                    break;
+                }
+
+                if (ConditionMet(request.FlightPurchase, discount))
+                {
+                    purchase.Price -= 5;
+
+                    // zapis zniżek dla danej grupy
+                    if (request.FlightPurchase.TenantGroup == Domain.Enums.TenantGroup.A)
+                    {
+                        purchase.Discounts.Add(discount);
+                    }
+                }
+            }
+
+            await _context.SaveChangesAsync(cancellationToken);
+            return purchase.Price;
+        }
+
+        private bool ConditionMet(FlightPurchaseDto flightPurchase, Domain.Entities.PriceDiscount discount)
+        {
+            var purchases = new List<FlightPurchaseDto>();
+            purchases.Add(flightPurchase);
+            var query = purchases.AsQueryable();
+
+            var queryString = string.Empty;
+
+            foreach (var r in discount.Rules)
+            {
+                if (discount.Rules.IndexOf(r) == 0)
+                {
+                    queryString += "(";
+                }
+
+                queryString += $"{r.FieldName} = \"{r.Value}\"";
+
+                if (discount.Rules.IndexOf(r) == discount.Rules.Count - 1)
+                {
+                    queryString += ")";
+                }
+                else
+                {
+                    queryString += " and ";
+                }
+            }
+
+            if (string.IsNullOrEmpty(queryString) || query.Where(queryString).Any())
+            {
+                return true;
+            }
+
+            return false;
+        }
+    }
+}
