@@ -7,10 +7,6 @@ namespace ATSS.Application.Common.Interfaces
 {
     public interface IApplicationDbContext
     {
-        DbSet<TodoList> TodoLists { get; set; }
-
-        DbSet<TodoItem> TodoItems { get; set; }
-
         DbSet<Flight> Flights { get; set; }
 
         DbSet<Tenant> Tenants { get; set; }

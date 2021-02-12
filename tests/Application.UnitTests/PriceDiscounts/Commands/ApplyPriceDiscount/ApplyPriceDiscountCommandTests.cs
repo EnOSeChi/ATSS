@@ -13,6 +13,9 @@ using System.Threading.Tasks;
 
 namespace ATSS.Application.UnitTests.PriceDiscounts.Commands.ApplyPriceDiscount
 {
+    /// <summary>
+    /// dodanie zniżek do ceny
+    /// </summary>
     public class ApplyPriceDiscountCommandTests : Testing
     {
         private MapperConfiguration _configuration;
@@ -28,6 +31,7 @@ namespace ATSS.Application.UnitTests.PriceDiscounts.Commands.ApplyPriceDiscount
             _mapper = _configuration.CreateMapper();
         }
 
+        // tenant z grupy A dodaje zniżke z warunkiem lot w czwartek do Afryki
         [Test]
         public async Task ShouldApplyOnThursdayToAfricaAndSaveIt()
         {
@@ -72,7 +76,7 @@ namespace ATSS.Application.UnitTests.PriceDiscounts.Commands.ApplyPriceDiscount
 
             var flightPurchase = new FlightPurchase
             {
-                DepartureDateTime = DateTimeOffset.Parse("2021-02-11T10:00:00Z"),
+                DepartureDateTime = DateTimeOffset.Parse("2021-02-11T10:00:00Z"), // czwartek
                 Flight = flight,
                 Price = 25,
                 Tenant = tenant
@@ -92,6 +96,7 @@ namespace ATSS.Application.UnitTests.PriceDiscounts.Commands.ApplyPriceDiscount
             Assert.IsTrue(Context.FlightPurchases.First().Discounts.Count > 0);
         }
 
+        // // tenant z grupy B dodaje zniżke z warunkiem lot w czwartek do Afryki
         [Test]
         public async Task ShouldApplyOnThursdayToAfricaAndNotSaveIt()
         {
@@ -136,7 +141,7 @@ namespace ATSS.Application.UnitTests.PriceDiscounts.Commands.ApplyPriceDiscount
 
             var flightPurchase = new FlightPurchase
             {
-                DepartureDateTime = DateTimeOffset.Parse("2021-02-11T10:00:00Z"),
+                DepartureDateTime = DateTimeOffset.Parse("2021-02-11T10:00:00Z"), // czwartek
                 Flight = flight,
                 Price = 25,
                 Tenant = tenant
@@ -157,6 +162,7 @@ namespace ATSS.Application.UnitTests.PriceDiscounts.Commands.ApplyPriceDiscount
             Assert.IsTrue(Context.FlightPurchases.First().Discounts.Count == 0);
         }
 
+        // tenant z grupy A dodaje dwie zniżki: czwartek do Afryki i urodziny
         [Test]
         public async Task ShouldApplyOnThursdayToAfricaAndTenantBirthdayAndSaveIt()
         {
@@ -202,7 +208,7 @@ namespace ATSS.Application.UnitTests.PriceDiscounts.Commands.ApplyPriceDiscount
 
             var flightPurchase = new FlightPurchase
             {
-                DepartureDateTime = DateTimeOffset.Parse("2021-02-11T10:00:00Z"),
+                DepartureDateTime = DateTimeOffset.Parse("2021-02-11T10:00:00Z"), // czwartek
                 Flight = flight,
                 Price = 32,
                 Tenant = tenant
@@ -223,6 +229,7 @@ namespace ATSS.Application.UnitTests.PriceDiscounts.Commands.ApplyPriceDiscount
             Assert.IsTrue(Context.FlightPurchases.First().Discounts.Count == 2);
         }
 
+        // tylko jedna zniżka jest wykorzystana z powodu dolnego limitu ceny
         [Test]
         public async Task ShouldApplyOnlyOneDiscountBecauseMinPriceLimit()
         {
@@ -268,7 +275,7 @@ namespace ATSS.Application.UnitTests.PriceDiscounts.Commands.ApplyPriceDiscount
 
             var flightPurchase = new FlightPurchase
             {
-                DepartureDateTime = DateTimeOffset.Parse("2021-02-11T10:00:00Z"),
+                DepartureDateTime = DateTimeOffset.Parse("2021-02-11T10:00:00Z"), // czwartek
                 Flight = flight,
                 Price = 27,
                 Tenant = tenant

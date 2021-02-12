@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace ATSS.Domain.Entities
 {
+    /// <summary>
+    /// kupienie biletu na lot
+    /// </summary>
     public class FlightPurchase
     {
         public FlightPurchase()

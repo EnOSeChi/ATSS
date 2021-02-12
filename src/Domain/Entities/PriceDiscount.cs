@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace ATSS.Domain.Entities
 {
+    /// <summary>
+    /// zniżki
+    /// </summary>
     public class PriceDiscount
     {
         public PriceDiscount()

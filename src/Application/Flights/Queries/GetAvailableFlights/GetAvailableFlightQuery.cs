@@ -12,6 +12,9 @@ using System.Threading.Tasks;
 
 namespace ATSS.Application.Flights.Queries.GetAvailableFlights
 {
+    /// <summary>
+    /// wyszukanie lotu po FlightId
+    /// </summary>
     public class GetAvailableFlightQuery : IRequest<List<FlightDto>>
     {
         public FlightId FlightId { get; set; }
@@ -44,37 +47,79 @@ namespace ATSS.Application.Flights.Queries.GetAvailableFlights
 
             if (flight.Monday)
             {
-                var mondaysInRange = GetWeekdayInRange(request.From, request.To, DayOfWeek.Monday);
+                var datesInRange = await GetWeekdayInRange(request.From, request.To, DayOfWeek.Monday);
+                result.AddRange(await GetFlightsForDates(flight, datesInRange));
+            }
 
-                foreach (var date in mondaysInRange)
-                {
-                    var flightDto = _mapper.Map<FlightDto>(flight);
-                    flightDto.DepartureDateTime = new DateTimeOffset(date.Year, date.Month, date.Day, flight.Hour, flight.Minute, 0, TimeSpan.Zero);
-                    flightDto.Price = GetPriceForDate(flight, flightDto.DepartureDateTime);
-                    result.Add(flightDto);
-                }
+            if (flight.Tuesday)
+            {
+                var datesInRange = await GetWeekdayInRange(request.From, request.To, DayOfWeek.Tuesday);
+                result.AddRange(await GetFlightsForDates(flight, datesInRange));
+            }
+
+            if (flight.Wednesday)
+            {
+                var datesInRange = await GetWeekdayInRange(request.From, request.To, DayOfWeek.Wednesday);
+                result.AddRange(await GetFlightsForDates(flight, datesInRange));
+            }
+
+            if (flight.Thursday)
+            {
+                var datesInRange = await GetWeekdayInRange(request.From, request.To, DayOfWeek.Thursday);
+                result.AddRange(await GetFlightsForDates(flight, datesInRange));
+            }
+
+            if (flight.Friday)
+            {
+                var datesInRange = await GetWeekdayInRange(request.From, request.To, DayOfWeek.Friday);
+                result.AddRange(await GetFlightsForDates(flight, datesInRange));
+            }
+
+            if (flight.Saturday)
+            {
+                var datesInRange = await GetWeekdayInRange(request.From, request.To, DayOfWeek.Saturday);
+                result.AddRange(await GetFlightsForDates(flight, datesInRange));
+            }
+
+            if (flight.Sunday)
+            {
+                var datesInRange = await GetWeekdayInRange(request.From, request.To, DayOfWeek.Sunday);
+                result.AddRange(await GetFlightsForDates(flight, datesInRange));
             }
 
             return result;
         }
 
-        private double GetPriceForDate(Domain.Entities.Flight flight, DateTimeOffset departureDate)
+        private async Task<List<FlightDto>> GetFlightsForDates(Domain.Entities.Flight flight, List<DateTimeOffset> daysInRange)
+        {
+            var flights = new List<FlightDto>();
+
+            foreach (var date in daysInRange)
+            {
+                var flightDto = _mapper.Map<FlightDto>(flight);
+                flightDto.DepartureDateTime = new DateTimeOffset(date.Year, date.Month, date.Day, flight.Hour, flight.Minute, 0, TimeSpan.Zero);
+                flightDto.Price = await GetPriceForDate(flight, flightDto.DepartureDateTime);
+                flights.Add(flightDto);
+            }
+
+            return flights;
+        }
+
+        private Task<double> GetPriceForDate(Domain.Entities.Flight flight, DateTimeOffset departureDate)
         {
             if (flight.CustomPrices.Any(x => x.From <= departureDate &&
                 x.To >= departureDate))
             {
-                return flight.CustomPrices
+                return Task.FromResult(flight.CustomPrices
                     .Where(x => x.From <= departureDate && x.To >= departureDate)
                     .First()
-                    .Value;
+                    .Value);
             }
-            else
-            {
-                return flight.DefaultPrice;
-            }
+
+            return Task.FromResult(flight.DefaultPrice);
         }
 
-        public List<DateTimeOffset> GetWeekdayInRange(DateTimeOffset from, DateTimeOffset to, DayOfWeek day)
+        public Task<List<DateTimeOffset>> GetWeekdayInRange(DateTimeOffset from, DateTimeOffset to, DayOfWeek day)
         {
             const int daysInWeek = 7;
             var result = new List<DateTimeOffset>();
@@ -87,7 +132,7 @@ namespace ATSS.Application.Flights.Queries.GetAvailableFlights
                 daysToAdd = daysInWeek;
             }
 
-            return result;
+            return Task.FromResult(result);
         }
     }
 }

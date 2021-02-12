@@ -12,6 +12,9 @@ using System.Threading.Tasks;
 
 namespace ATSS.Application.UnitTests.FlightPurchases.Commands.CreateFlightPurchase
 {
+    /// <summary>
+    /// kupienie lotu
+    /// </summary>
     public class CreateFlightPurchaseCommandTests : Testing
     {
         private MapperConfiguration _configuration;

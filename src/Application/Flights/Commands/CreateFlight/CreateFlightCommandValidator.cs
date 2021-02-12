@@ -21,17 +21,21 @@ namespace ATSS.Application.Flights.Commands.CreateFlight
 
             RuleFor(v => v.FlightId)
                 .NotEmpty().WithMessage("FlightId is required.")
-                .MustAsync(UniqueFlightId).WithMessage("The specified flight id already exists.");
+                .MustAsync(NotExistedFlightId).WithMessage("The specified flight id already exists.");
 
             RuleFor(v => v.TenantId)
                 .NotEqual(0).WithMessage("TenantId is required")
                 .MustAsync(ExistedTenant).WithMessage("Tenant not exists.");
         }
 
-        public async Task<bool> UniqueFlightId(FlightId flightId, CancellationToken cancellationToken)
+        public async Task<bool> NotExistedFlightId(FlightId flightId, CancellationToken cancellationToken)
         {
-            return await _context.Flights
-                .AllAsync(l => l.FlightId != flightId);
+            var exists = await _context.Flights
+                .AnyAsync(l => l.FlightId.Segment1 == flightId.Segment1 &&
+                    l.FlightId.Segment2 == flightId.Segment2 &&
+                    l.FlightId.Segment3 == flightId.Segment3);
+
+            return !exists;
         }
 
         public async Task<bool> ExistedTenant(int id, CancellationToken cancellationToken)

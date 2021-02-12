@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace ATSS.Domain.Entities
 {
+    /// <summary>
+    /// warunki jakie musza być spełnione dla zniżki
+    /// </summary>
     public class PriceDiscountRule
     {
         public int Id { get; set; }

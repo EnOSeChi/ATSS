@@ -17,6 +17,9 @@ using System.Threading.Tasks;
 
 namespace ATSS.Application.UnitTests.Flights.Queries.GetAvailableFlights
 {
+    /// <summary>
+    /// możliwość wyszukania lotu po ID
+    /// </summary>
     public class GetAvailableFlightsQueryTests : Testing
     {
         private MapperConfiguration _configuration;
@@ -57,28 +60,6 @@ namespace ATSS.Application.UnitTests.Flights.Queries.GetAvailableFlights
             Context.SaveChanges();
 
             var from = DateTimeOffset.Parse("2021-02-02T10:00:00Z");
-
-            // predicate test
-            //var purchases = new List<FlightPurchaseDto>();
-            //purchases.Add(new FlightPurchaseDto
-            //{
-            //    IsOnTenantBirthday = true,
-            //    From = "Europe"
-            //});
-            //purchases.Add(new FlightPurchaseDto());
-            ////var query = Context.Flights.Where("(From = \"Europe\")").ToList();
-            //var query = purchases.AsQueryable().Where("(IsOnTenantBirthday = \"True\")");
-            //query = query.Where("(From = \"Europe\")");
-            //var match = query.ToList();
-
-            //var t = new FlightPurchaseDto
-            //{
-            //    IsOnTenantBirthday = true
-            //};
-
-           // var fields = t.GetType().GetFields();
-           // var bField = t.GetType().GetProperty("IsOnTenantBirthday");
-           // var bValue = bField.GetValue(t);
 
             var availableFlightsQuery = new GetAvailableFlightQueryHandler(Context, _mapper);
             var result = await availableFlightsQuery.Handle(new GetAvailableFlightQuery

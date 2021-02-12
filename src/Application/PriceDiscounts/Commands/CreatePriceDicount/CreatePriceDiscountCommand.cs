@@ -10,6 +10,9 @@ using System.Threading.Tasks;
 
 namespace ATSS.Application.PriceDiscounts.Commands.CreatePriceDiscount
 {
+    /// <summary>
+    /// dodanie zniżki
+    /// </summary>
     public class CreatePriceDiscountCommand : IRequest<int>
     {
         public CreatePriceDiscountCommand()

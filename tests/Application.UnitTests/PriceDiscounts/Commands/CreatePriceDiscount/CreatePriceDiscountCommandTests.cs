@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 
 namespace ATSS.Application.UnitTests.PriceDiscounts.Commands.CreatePriceDiscount
 {
+    /// <summary>
+    /// dodawanie zniżek
+    /// </summary>
     public class CreatePriceDiscountCommandTests : Testing
     {
         [Test]

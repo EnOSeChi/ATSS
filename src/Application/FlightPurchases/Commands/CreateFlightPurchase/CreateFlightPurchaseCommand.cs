@@ -13,6 +13,9 @@ using System.Threading.Tasks;
 
 namespace ATSS.Application.FlightPurchases.Commands.CreateFlightPurchase
 {
+    /// <summary>
+    /// zakupienie biletu na lot
+    /// </summary>
     public class CreateFlightPurchaseCommand : IRequest<FlightPurchaseDto>
     {
         public int TenantId { get; set; }

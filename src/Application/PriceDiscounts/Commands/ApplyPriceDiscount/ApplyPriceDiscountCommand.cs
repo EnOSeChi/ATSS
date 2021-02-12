@@ -10,6 +10,9 @@ using System.Threading.Tasks;
 
 namespace ATSS.Application.PriceDiscounts.Commands.ApplyPriceDiscount
 {
+    /// <summary>
+    /// zastosowanie zniżki do ceny
+    /// </summary>
     public class ApplyPriceDiscountCommand : IRequest<double>
     {
         public FlightPurchaseDto FlightPurchase { get; set; }
@@ -35,36 +38,52 @@ namespace ATSS.Application.PriceDiscounts.Commands.ApplyPriceDiscount
 
             foreach (var discount in discounts)
             {
-                // minimalna cena 20
-                if (purchase.Price - 5 < 20)
-                {
-                    break;
-                }
-
-                if (ConditionMet(request.FlightPurchase, discount))
-                {
-                    purchase.Price -= 5;
-
-                    // zapis zniżek dla danej grupy
-                    if (request.FlightPurchase.TenantGroup == Domain.Enums.TenantGroup.A)
-                    {
-                        purchase.Discounts.Add(discount);
-                    }
-                }
+                await CheckConditionsAndApply(discount, request.FlightPurchase, purchase);
             }
 
             await _context.SaveChangesAsync(cancellationToken);
             return purchase.Price;
         }
 
-        private bool ConditionMet(FlightPurchaseDto flightPurchase, Domain.Entities.PriceDiscount discount)
+        private async Task CheckConditionsAndApply(Domain.Entities.PriceDiscount discount, FlightPurchaseDto purchaseDto, Domain.Entities.FlightPurchase purchase)
+        {
+            // minimalna cena 20
+            if (purchase.Price - 5 < 20)
+            {
+                return;
+            }
+
+            if (await ConditionMet(purchaseDto, discount))
+            {
+                purchase.Price -= 5;
+
+                // zapis zniżek dla danej grupy
+                if (purchaseDto.TenantGroup == Domain.Enums.TenantGroup.A)
+                {
+                    purchase.Discounts.Add(discount);
+                }
+            }
+        }
+
+        private async Task<bool> ConditionMet(FlightPurchaseDto flightPurchase, Domain.Entities.PriceDiscount discount)
         {
             var purchases = new List<FlightPurchaseDto>();
             purchases.Add(flightPurchase);
             var query = purchases.AsQueryable();
 
             var queryString = string.Empty;
+            queryString = await BuildQueryString(discount, queryString);
 
+            if (string.IsNullOrEmpty(queryString) || query.Where(queryString).Any())
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+        private Task<string> BuildQueryString(Domain.Entities.PriceDiscount discount, string queryString)
+        {
             foreach (var r in discount.Rules)
             {
                 if (discount.Rules.IndexOf(r) == 0)
@@ -77,19 +96,13 @@ namespace ATSS.Application.PriceDiscounts.Commands.ApplyPriceDiscount
                 if (discount.Rules.IndexOf(r) == discount.Rules.Count - 1)
                 {
                     queryString += ")";
+                    break;
                 }
-                else
-                {
-                    queryString += " and ";
-                }
+
+                queryString += " and ";
             }
 
-            if (string.IsNullOrEmpty(queryString) || query.Where(queryString).Any())
-            {
-                return true;
-            }
-
-            return false;
+            return Task.FromResult(queryString);
         }
     }
 }

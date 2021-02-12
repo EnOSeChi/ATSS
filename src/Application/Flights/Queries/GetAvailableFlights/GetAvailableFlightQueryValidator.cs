@@ -31,7 +31,9 @@ namespace ATSS.Application.Flights.Queries.GetAvailableFlights
         public async Task<bool> ExistedFlightId(FlightId flightId, CancellationToken cancellationToken)
         {
             return await _context.Flights
-                .AllAsync(l => l.FlightId != flightId);
+                .AnyAsync(l => l.FlightId.Segment1 == flightId.Segment1 &&
+                    l.FlightId.Segment2 == flightId.Segment2 &&
+                    l.FlightId.Segment3 == flightId.Segment3);
         }
 
         public async Task<bool> ExistedTenant(int id, CancellationToken cancellationToken)

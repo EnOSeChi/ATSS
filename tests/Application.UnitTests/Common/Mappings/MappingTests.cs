@@ -1,7 +1,8 @@
-﻿using AutoMapper;
-using ATSS.Application.Common.Mappings;
-using ATSS.Application.TodoLists.Queries.GetTodos;
+﻿using ATSS.Application.Common.Mappings;
+using ATSS.Application.FlightPurchases.Commands.CreateFlightPurchase;
+using ATSS.Application.Flights.Queries.GetAvailableFlights;
 using ATSS.Domain.Entities;
+using AutoMapper;
 using NUnit.Framework;
 using System;
 using System.Runtime.Serialization;
@@ -30,8 +31,8 @@ namespace ATSS.Application.UnitTests.Common.Mappings
         }
         
         [Test]
-        [TestCase(typeof(TodoList), typeof(TodoListDto))]
-        [TestCase(typeof(TodoItem), typeof(TodoItemDto))]
+        [TestCase(typeof(FlightPurchase), typeof(FlightPurchaseDto))]
+        [TestCase(typeof(Flight), typeof(FlightDto))]
         public void ShouldSupportMappingFromSourceToDestination(Type source, Type destination)
         {
             var instance = GetInstanceOf(source);
