@@ -4,7 +4,7 @@ Airline Ticket Sales System
 
 ## Inspiracje
 
-Wzorowałem się na Clean Architecture i prezentacji: https://www.youtube.com/watch?v=dK4Yb6-LxAk&t=489s.
+Wzorowałem się na Clean Architecture i prezentacji: https://www.youtube.com/watch?v=dK4Yb6-LxAk&t.
 Jako punkt wyjścia dla solucji wykorzystałem szablon Clean.Architecture.Solution.Template: https://github.com/jasontaylordev/CleanArchitecture.
 
 ## Kilka słów wyjaśnień
