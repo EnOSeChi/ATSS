@@ -17,6 +17,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain.UnitTests", "tests\D
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "documentation", "documentation", "{6B1DA3A4-EFC0-4864-9ACB-3772CB060523}"
 	ProjectSection(SolutionItems) = preProject
+		documentation\Readme.md = documentation\Readme.md
 		documentation\Zadanie rekrutacyjne - Programista .NET.docx = documentation\Zadanie rekrutacyjne - Programista .NET.docx
 	EndProjectSection
 EndProject
